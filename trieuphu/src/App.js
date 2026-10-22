@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import Play from "./pages/Play";
+import Result from "./pages/Result";
 import QuestionBank from "./pages/QuestionBank";
 import QuestionDetail from "./pages/QuestionDetail";
 import NotFound from "./pages/NotFound";
@@ -11,6 +13,7 @@ const App = () => {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [playerName, setPlayerName] = useState("");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -22,7 +25,7 @@ const App = () => {
         setLoading(false);
       })
       .catch((err) => {
-        if (axios.isCancel(err)) return; // request bị hủy thì không báo lỗi
+        if (axios.isCancel(err)) return;
         setError("Không tải được câu hỏi");
         setLoading(false);
       });
@@ -33,7 +36,19 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route
+          index
+          element={<Home playerName={playerName} setPlayerName={setPlayerName} />}
+        />
+        <Route
+          path="play"
+          element={
+            playerName.trim() === ""
+              ? <Navigate to="/" replace />
+              : <Play questions={questions} playerName={playerName} />
+          }
+        />
+        <Route path="result" element={<Result />} />
         <Route
           path="questions"
           element={<QuestionBank questions={questions} loading={loading} error={error} />}
