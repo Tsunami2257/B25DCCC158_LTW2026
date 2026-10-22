@@ -1,0 +1,25 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #0b1b4d; color: #fff; }
+.content { max-width: 900px; margin: 0 auto; padding: 20px; }
+.navbar { display: flex; gap: 20px; padding: 14px 20px; background: #081338; }
+.navbar a { color: #fff; text-decoration: none; }
+.navbar a.active { color: red; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; background: #fff; color: #000; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+.correct-text { color: green; font-weight: bold; }
+.answers { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.answer { padding: 14px; border: 2px solid #fff; background: #13236b; color: #fff; border-radius: 20px; cursor: pointer; text-align: left; }
+.answer.selected { background: orange; }
+.answer.correct { background: green; }
+.answer.wrong { background: red; }
+.answer.hidden { visibility: hidden; }
+.timer.danger { color: red; font-weight: bold; }
+.play { display: flex; gap: 20px; }
+.play-main { flex: 1; }
+.ladder { list-style: none; padding: 0; margin: 0; width: 200px; }
+.ladder li { padding: 4px 8px; }
+.ladder li.milestone { font-weight: bold; }
+.ladder li.current { background: orange; color: #000; }
+.lifelines { display: flex; gap: 10px; margin-top: 16px; }
+.bar-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.bar-row .label { width: 70px; }
+.bar { background: #4da3ff; height: 22px; }
