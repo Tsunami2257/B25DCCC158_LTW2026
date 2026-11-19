@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.app.light {
+  background-color: #ffffff;
+  color: #18212c;
+}
+
+.app.dark {
+  background-color: #1f2430;
+  color: #e8eef8;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.section-card {
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th,
+td {
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.row-fail {
+  color: #c62828;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.error-text {
+  color: #c62828;
+  font-size: 0.85rem;
+  margin: 2px 0 0;
+}
