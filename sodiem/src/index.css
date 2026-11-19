@@ -77,3 +77,14 @@ td {
   font-size: 0.85rem;
   margin: 2px 0 0;
 }
+
+.notice-banner {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: #1976d2;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  z-index: 1000;
+}
