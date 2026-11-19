@@ -88,3 +88,23 @@ td {
   border-radius: 6px;
   z-index: 1000;
 }
+.grade-dist-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.grade-dist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grade-bar {
+  display: inline-block;
+  height: 10px;
+  background-color: #1976d2;
+}
